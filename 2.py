@@ -6,6 +6,7 @@ import requests     #模拟hppts请求
 import re           #正则表达式，用于提取image、cv号
 import os           #提供文件读写操作
 import time         #提供延时函数
+from baidutrans import baiduTranslate
 
 header = {
     'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) '
@@ -19,6 +20,7 @@ title_re = '<link rel=".*?" type=".*?" title="(.*?)"'
 def run(current_url):   #对每一个cv号进行遍历爬取
     html = getrequests(current_url) #爬取当前cv号的专栏网页
     dir_name,urls = analysi(html)   #从网页的文本中提取标题（dir_name）、image's urls（urls）
+    dir_name = baiduTranslate(dir_name)
     dir_name =tryMkdir(dir_name)    #以标题为文件夹名尝试创建文件夹
     writeTodisk1(dir_name,urls)  #将网页中的image写入磁盘
     return
@@ -108,7 +110,7 @@ if __name__ == '__main__':
     url_list = []    #初始化一个cv_list
     mid = '71835' #一个mid
     url0 ='https://eromangaget.com/71835'
-    #run(url0)
+    run(url0)
     cv_list=findCvNumber(url_list,mid)   #调用findCvNumber抓去cv号列表
     main(cv_list)   #调用main进行对每个cv号进行爬取
     print('Hello World')    #标志性输出

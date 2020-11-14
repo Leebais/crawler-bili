@@ -37,7 +37,6 @@ def baiduTranslate(q="苹果", fromLang="jp", toLang="zh"):
 def main():
     word = input("请输入：")
     print(baiduTranslate(word))
-    #dst = rest['trans_result'][0]['dst']
 
 if __name__ == '__main__':
     main()
