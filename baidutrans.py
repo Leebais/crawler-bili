@@ -6,8 +6,8 @@ import json
 
 
 def baiduTranslate(q="苹果", fromLang="jp", toLang="zh"):
-    appid = '20201107000610820' #你的appid(这里是必填的, 从百度 开发者信息一览获取)
-    secretKey = 'ONlxCCkk82ZOCYIsQdEe' #你的密钥(这里是必填的, 从百度 开发者信息一览获取)
+    appid = '' #你的appid(这里是必填的, 从百度 开发者信息一览获取)
+    secretKey = '' #你的密钥(这里是必填的, 从百度 开发者信息一览获取)
 
     httpClient = None
     myurl = '/api/trans/vip/translate'
