@@ -4,7 +4,7 @@ import urllib.parse
 import random
 import json
 
-def baiduTrianslate(q="苹果", fromLang="jp", toLang="zh"):
+def baiduTranslate(q="苹果", fromLang="jp", toLang="zh"):
     appid = '20201107000610820'  # 你的appid(这里是必填的, 从百度 开发者信息一览获取)
     secretKey = 'ONlxCCkk82ZOCYIsQdEe'  # 你的密钥(这里是必填的, 从百度 开发者信息一览获取)
 
